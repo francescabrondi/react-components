@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from "./components/Contact";
+import ContactList from "./components/ContactList";
 
 function App() {
   const users = [
@@ -20,18 +20,24 @@ function App() {
       name: "Mai na Joy",
       online: false,
       avatar: "https://randomuser.me/api/portraits/women/47.jpg"
+    },
+    {
+      id: 4,
+      name: "Clyde",
+      online: true,
+      avatar: "https://randomuser.me/api/portraits/men/91.jpg"
+    },
+    {
+      id: 5,
+      name: "Hector",
+      online: false,
+      avatar: "https://randomuser.me/api/portraits/men/20.jpg"
     }
   ];
 
   return (
     <div className="App">
-      {users.map(users => (
-        <Contact
-          name={users.name}
-          online={users.online}
-          avatar={users.avatar}
-        />
-      ))}
+      <ContactList users={users} />
     </div>
   );
 }
